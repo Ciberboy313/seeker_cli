@@ -49,6 +49,10 @@ python -m unittest discover tests
 - `search_files` relies on Everything being installed and running.
 - `process_mentions` (`@file`) injects file content without a permission prompt.
 
+### Versioning
+- Current version in `VERSION`.
+- Release notes in `CHANGELOG.md`.
+
 ## Italiano
 
 Seeker CLI e un assistente AI da riga di comando che gira in locale e usa Ollama per interpretare le richieste e eseguire task con un sistema di tool.
@@ -97,3 +101,7 @@ python -m unittest discover tests
 - `consult_documentation` e basato su keyword, non semantico.
 - `search_files` richiede Everything installato e in funzione.
 - `process_mentions` (`@file`) inietta contenuto senza richiesta di permesso.
+
+### Versioni
+- Versione corrente in `VERSION`.
+- Note di rilascio in `CHANGELOG.md`.

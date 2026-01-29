@@ -51,6 +51,8 @@ The specialist can call these actions (tool names are internal, user sees natura
 - `IMPROVEMENTS.md`: roadmap and proposed fixes.
 - `CRITIC_CONSIDERATION.md`: security and stability risks.
 - `docs/windows_hacks.md`: cookbook commands for Windows theme.
+- `VERSION`: current version.
+- `CHANGELOG.md`: release notes.
 
 ## Italiano
 
@@ -103,3 +105,5 @@ Lo specialist puo chiamare queste azioni (nomi interni, l utente usa linguaggio 
 - `IMPROVEMENTS.md`: roadmap e fix proposti.
 - `CRITIC_CONSIDERATION.md`: rischi security/stability.
 - `docs/windows_hacks.md`: comandi cookbook per il tema.
+- `VERSION`: versione corrente.
+- `CHANGELOG.md`: note di rilascio.
