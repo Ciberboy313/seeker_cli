@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+.env
+session.log
+internal_test_result.txt
+
+.vscode/
+desktop.ini
+Rubbish/
+
+.venv/

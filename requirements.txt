@@ -1,0 +1,5 @@
+python-dotenv
+requests
+colorama
+prompt_toolkit
+googlesearch-python
