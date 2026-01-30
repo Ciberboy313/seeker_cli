@@ -23,7 +23,7 @@ Ollama lets you run language models locally.
 
 | Item | Description | Install / Command |
 | --- | --- | --- |
-| Ollama (software) | Main application to manage and run models. | Download from the official Ollama site. |
+| Ollama (software) | Main application to manage and run models. | https://ollama.com/download |
 | Gemma 2 (2b) | Lightweight model for quick tasks. | `ollama run gemma2:2b` |
 | Llama 3.2 (1b) | Ultra-compact model for low resources. | `ollama run llama3.2:1b` |
 
@@ -34,8 +34,8 @@ Everything is a fast file indexer for Windows.
 
 | Item | Description | Download |
 | --- | --- | --- |
-| Everything (GUI) | Standard graphical interface. | Download the installer from the official voidtools site. |
-| Everything CLI (es.exe) | Command-line search tool. | Download `es.exe` from the official voidtools site. |
+| Everything (GUI) | Standard graphical interface. | https://www.voidtools.com/downloads/ |
+| Everything CLI (es.exe) | Command-line search tool. | https://www.voidtools.com/downloads/ |
 
 How to configure the CLI (`es.exe`):
 1. Download the `.zip` file.
@@ -102,7 +102,7 @@ Ollama permette di eseguire modelli di linguaggio localmente.
 
 | Oggetto | Descrizione | Link / Comando |
 | --- | --- | --- |
-| Ollama (software) | Applicazione principale per gestire ed eseguire i modelli. | Scarica dal sito ufficiale di Ollama. |
+| Ollama (software) | Applicazione principale per gestire ed eseguire i modelli. | https://ollama.com/download |
 | Gemma 2 (2b) | Modello leggero per compiti rapidi. | `ollama run gemma2:2b` |
 | Llama 3.2 (1b) | Modello ultra compatto per risorse limitate. | `ollama run llama3.2:1b` |
 
@@ -113,8 +113,8 @@ Everything e un motore di ricerca file veloce per Windows.
 
 | Oggetto | Descrizione | Download |
 | --- | --- | --- |
-| Everything (GUI) | Versione con interfaccia grafica. | Scarica l installer dal sito ufficiale di voidtools. |
-| Everything CLI (es.exe) | Versione a riga di comando. | Scarica `es.exe` dal sito ufficiale di voidtools. |
+| Everything (GUI) | Versione con interfaccia grafica. | https://www.voidtools.com/downloads/ |
+| Everything CLI (es.exe) | Versione a riga di comando. | https://www.voidtools.com/downloads/ |
 
 Come configurare la CLI (`es.exe`):
 1. Scarica il file `.zip`.
