@@ -33,6 +33,10 @@ This document gathers critical issues, vulnerabilities, and architectural risks 
 | 18 | Missing type hints | Not fixed | No type hints added. |
 | 19 | No version control info | Resolved | Repo, `.gitignore`, `VERSION`, `CHANGELOG.md` added. |
 | 20 | Magic numbers | Not fixed | Constants not centralized. |
+| 21 | Third-party binary supply chain | Not applicable | No auto-download/execute features present. |
+| 22 | Log injection/path traversal | Not fixed | No input sanitization for log fields. |
+| 23 | Secrets exposure | Partially mitigated | `.env` ignored, but no validation/warnings. |
+| 24 | Encryption at rest | Not fixed | No encrypted storage for sensitive data. |
 
 ## Italiano
 
@@ -67,6 +71,10 @@ Questo documento raccoglie problemi critici, vulnerabilita e rischi architettura
 | 18 | Type hints mancanti | Non risolto | Nessun type hint aggiunto. |
 | 19 | Nessun controllo versione | Risolto | Repo, `.gitignore`, `VERSION`, `CHANGELOG.md` aggiunti. |
 | 20 | Magic numbers | Non risolto | Costanti non centralizzate. |
+| 21 | Supply chain binari terze parti | Non applicabile | Nessun auto-download/esecuzione presente. |
+| 22 | Log injection/path traversal | Non risolto | Nessuna sanitizzazione log. |
+| 23 | Esposizione segreti | Parzialmente mitigato | `.env` ignorato, ma senza validazione. |
+| 24 | Crittografia a riposo | Non risolto | Nessun storage cifrato. |
 
 ---
 

@@ -224,6 +224,47 @@ This document lists the known issues and a concrete plan to address them, starti
 
 ---
 
+### 21) Third-Party Binary Supply Chain
+**Goal:** avoid running tampered binaries (e.g., tunneling tools) if ever introduced.
+
+**Plan:**
+- Do not auto-download/execute binaries by default.
+- If binary download is added, verify SHA-256 against known values.
+- Prefer OS package managers or manual install with explicit user approval.
+
+**Tests:**
+- Hash mismatch blocks execution.
+
+---
+
+### 22) Log Injection and Path Traversal via Untrusted Input
+**Goal:** prevent untrusted inputs from corrupting logs or file paths.
+
+**Plan:**
+- Sanitize log fields (strip control chars, normalize newlines).
+- Do not build file paths from untrusted input; use fixed filenames.
+- Use safe serialization for logs (e.g., JSON with escaping).
+
+---
+
+### 23) Secrets and Tokens Exposure
+**Goal:** keep API tokens and credentials out of source control.
+
+**Plan:**
+- Load secrets only from `.env` or OS environment.
+- Keep `.env` in `.gitignore` (already done).
+- Add explicit startup warnings if secrets are missing.
+
+---
+
+### 24) Data Encryption at Rest (Sensitive Data)
+**Goal:** protect sensitive stored data if such features are added.
+
+**Plan:**
+- Store sensitive data encrypted (e.g., file-level encryption with a user-provided key).
+- Consider SQLite with encryption if structured storage is needed.
+- Avoid storing sensitive data unless required.
+
 ## Italiano
 
 Questo documento elenca i problemi noti e un piano concreto per risolverli, partendo dalle priorita piu alte.
@@ -439,3 +480,46 @@ Questo documento elenca i problemi noti e un piano concreto per risolverli, part
 **Piano:**
 - Spostare limiti e default in `core/config.py`.
 - Usare costanti nel codice.
+
+---
+
+### 21) Supply chain dei binari di terze parti
+**Obiettivo:** evitare esecuzione di binari manomessi (se introdotti in futuro).
+
+**Piano:**
+- Non scaricare/eseguire binari automaticamente di default.
+- Se viene introdotto il download, verificare SHA-256 contro valori noti.
+- Preferire installazione manuale o package manager con conferma esplicita.
+
+**Test:**
+- Hash non valido blocca l esecuzione.
+
+---
+
+### 22) Log Injection e Path Traversal da input non fidato
+**Obiettivo:** evitare che input non fidati corrompano log o path.
+
+**Piano:**
+- Sanitizzare i campi di log (rimuovere caratteri di controllo).
+- Non costruire path da input non fidati; usare nomi fissi.
+- Usare serializzazione sicura (JSON con escaping).
+
+---
+
+### 23) Esposizione di token/credenziali
+**Obiettivo:** evitare credenziali nel codice o nel repo.
+
+**Piano:**
+- Leggere segreti solo da `.env` o variabili di ambiente.
+- Tenere `.env` in `.gitignore` (gia fatto).
+- Avvisare all avvio se i segreti mancano.
+
+---
+
+### 24) Crittografia dei dati a riposo
+**Obiettivo:** proteggere dati sensibili se tali feature vengono aggiunte.
+
+**Piano:**
+- Salvare dati sensibili in forma cifrata (chiave utente).
+- Considerare SQLite cifrato per dati strutturati.
+- Evitare di salvare dati sensibili se non necessario.
