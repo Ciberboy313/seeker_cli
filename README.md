@@ -13,9 +13,35 @@ Seeker CLI is a command-line AI assistant that runs locally and uses Ollama to i
 
 ### Requirements
 - Python 3.8+.
-- Ollama installed and running.
+- Ollama installed and running (from the official site).
+- Ollama models pulled: `gemma2:2b` and `llama3.2:1b`.
 - Windows for `search_files`, `open_everything_interactive`, and theme control.
-- Everything installed for file search (CLI: `es.exe`, GUI: `Everything.exe`).
+- Everything installed for file search from the official site (CLI: `es.exe`, GUI: `Everything.exe`).
+
+### Ollama and LLM Models
+Ollama lets you run language models locally.
+
+| Item | Description | Install / Command |
+| --- | --- | --- |
+| Ollama (software) | Main application to manage and run models. | Download from the official Ollama site. |
+| Gemma 2 (2b) | Lightweight model for quick tasks. | `ollama run gemma2:2b` |
+| Llama 3.2 (1b) | Ultra-compact model for low resources. | `ollama run llama3.2:1b` |
+
+Note: Install Ollama first. Then open a terminal (PowerShell or Command Prompt) and run the commands above.
+
+### Everything (voidtools)
+Everything is a fast file indexer for Windows.
+
+| Item | Description | Download |
+| --- | --- | --- |
+| Everything (GUI) | Standard graphical interface. | Download the installer from the official voidtools site. |
+| Everything CLI (es.exe) | Command-line search tool. | Download `es.exe` from the official voidtools site. |
+
+How to configure the CLI (`es.exe`):
+1. Download the `.zip` file.
+2. Extract `es.exe` to a folder of your choice.
+3. Optional: add that folder to your system `PATH`.
+4. Keep Everything GUI running in the background.
 
 ### Install
 ```bash
@@ -66,9 +92,35 @@ Seeker CLI e un assistente AI da riga di comando che gira in locale e usa Ollama
 
 ### Requisiti
 - Python 3.8+.
-- Ollama installato e in esecuzione.
+- Ollama installato e in esecuzione (dal sito ufficiale).
+- Modelli Ollama scaricati: `gemma2:2b` e `llama3.2:1b`.
 - Windows per `search_files`, `open_everything_interactive` e gestione tema.
-- Everything installato per la ricerca file (CLI: `es.exe`, GUI: `Everything.exe`).
+- Everything installato per la ricerca file dal sito ufficiale (CLI: `es.exe`, GUI: `Everything.exe`).
+
+### Ollama e Modelli LLM
+Ollama permette di eseguire modelli di linguaggio localmente.
+
+| Oggetto | Descrizione | Link / Comando |
+| --- | --- | --- |
+| Ollama (software) | Applicazione principale per gestire ed eseguire i modelli. | Scarica dal sito ufficiale di Ollama. |
+| Gemma 2 (2b) | Modello leggero per compiti rapidi. | `ollama run gemma2:2b` |
+| Llama 3.2 (1b) | Modello ultra compatto per risorse limitate. | `ollama run llama3.2:1b` |
+
+Nota: installa prima Ollama. Poi apri il terminale (PowerShell o Prompt dei comandi) ed esegui i comandi sopra.
+
+### Everything (voidtools)
+Everything e un motore di ricerca file veloce per Windows.
+
+| Oggetto | Descrizione | Download |
+| --- | --- | --- |
+| Everything (GUI) | Versione con interfaccia grafica. | Scarica l installer dal sito ufficiale di voidtools. |
+| Everything CLI (es.exe) | Versione a riga di comando. | Scarica `es.exe` dal sito ufficiale di voidtools. |
+
+Come configurare la CLI (`es.exe`):
+1. Scarica il file `.zip`.
+2. Estrai `es.exe` in una cartella a tua scelta.
+3. Opzionale: aggiungi la cartella al `PATH` di sistema.
+4. Tieni Everything GUI aperto in background.
 
 ### Installazione
 ```bash
