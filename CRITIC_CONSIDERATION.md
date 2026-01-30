@@ -4,9 +4,69 @@
 
 This document gathers critical issues, vulnerabilities, and architectural risks identified in the Seeker CLI project. It is a risk catalog, not an implementation plan.
 
+### Recent updates reflected here
+- Documentation is now bilingual (README, Documentation, model guide, cookbook).
+- Windows cookbook aligned to actual theme commands in `core/config.py`.
+- Added `VERSION`, `CHANGELOG.md`, and `.gitignore` to the repo.
+- README now lists Ollama/Everything requirements with official links.
+
+### Status summary (English)
+| # | Issue | Status | Notes |
+|---|---|---|---|
+| 1 | Shell injection | Not fixed | `tool_execute` still uses `shell=True`. |
+| 2 | Prompt injection via context | Not fixed | `process_mentions` still injects raw file content. |
+| 3 | Infinite JSON loop | Not fixed | No max retry limit. |
+| 4 | Unlimited history | Not fixed | No trimming/summarization. |
+| 5 | Unicode/encoding errors | Not fixed | Read/write still UTF-8 only. |
+| 6 | Python REPL risk | Not applicable | No Python REPL tool in current code. |
+| 7 | Unlimited FS access | Not fixed | No path allowlist. |
+| 8 | Missing logging/audit | Partial | `session.log` exists, but no structured audit trail. |
+| 9 | Unpinned dependencies | Not fixed | Requirements are not pinned. |
+| 10 | Mutable system prompt | Not fixed | Prompt templates are mutable. |
+| 11 | Generic error handling | Not fixed | Many broad exceptions remain. |
+| 12 | Inconsistent timeouts | Not fixed | Multiple timeouts, no global policy. |
+| 13 | No input validation | Not fixed | No length/content checks. |
+| 14 | State consistency | Not fixed | No sync strategy documented. |
+| 15 | Output truncation | Not fixed | Fixed-length truncation still used. |
+| 16 | Disorganized imports | Not fixed | Imports still mixed. |
+| 17 | Missing docstrings | Not fixed | Many functions undocumented. |
+| 18 | Missing type hints | Not fixed | No type hints added. |
+| 19 | No version control info | Resolved | Repo, `.gitignore`, `VERSION`, `CHANGELOG.md` added. |
+| 20 | Magic numbers | Not fixed | Constants not centralized. |
+
 ## Italiano
 
 Questo documento raccoglie problemi critici, vulnerabilita e rischi architetturali individuati nel progetto Seeker CLI. E un catalogo rischi, non un piano di implementazione.
+
+### Aggiornamenti recenti inclusi qui
+- Documentazione ora bilingue (README, Documentation, model guide, cookbook).
+- Cookbook Windows allineato ai comandi reali in `core/config.py`.
+- Aggiunti `VERSION`, `CHANGELOG.md` e `.gitignore` al repo.
+- README aggiornato con requisiti Ollama/Everything e link ufficiali.
+
+### Stato sintetico (Italiano)
+| # | Problema | Stato | Note |
+|---|---|---|---|
+| 1 | Shell injection | Non risolto | `tool_execute` usa ancora `shell=True`. |
+| 2 | Prompt injection da contesto | Non risolto | `process_mentions` inietta contenuto grezzo. |
+| 3 | Loop JSON infinito | Non risolto | Nessun limite di retry. |
+| 4 | History illimitata | Non risolto | Nessun trimming/summary. |
+| 5 | Errori encoding | Non risolto | Read/write solo UTF-8. |
+| 6 | Rischio Python REPL | Non applicabile | Nessun tool REPL in questa codebase. |
+| 7 | Accesso FS illimitato | Non risolto | Nessuna allowlist percorsi. |
+| 8 | Logging/audit assenti | Parziale | `session.log` esiste, ma manca audit trail. |
+| 9 | Dipendenze non bloccate | Non risolto | Requirements non pinning. |
+| 10 | Prompt di sistema mutabile | Non risolto | Template modificabili. |
+| 11 | Error handling generico | Non risolto | Eccezioni ampie. |
+| 12 | Timeout incoerenti | Non risolto | Timeouts multipli, nessuna policy. |
+| 13 | Nessuna validazione input | Non risolto | Nessun check lunghezza/contenuto. |
+| 14 | Consistenza stato | Non risolto | Nessuna strategia. |
+| 15 | Troncamento output | Non risolto | Troncamento fisso presente. |
+| 16 | Import disordinati | Non risolto | Import non standardizzati. |
+| 17 | Docstring mancanti | Non risolto | Funzioni senza doc. |
+| 18 | Type hints mancanti | Non risolto | Nessun type hint aggiunto. |
+| 19 | Nessun controllo versione | Risolto | Repo, `.gitignore`, `VERSION`, `CHANGELOG.md` aggiunti. |
+| 20 | Magic numbers | Non risolto | Costanti non centralizzate. |
 
 ---
 
@@ -246,7 +306,7 @@ def safe_read_file(path):
 
 ### 6. **Python REPL Vulnerable to Malicious Code** 💀
 
-**File**: `core/tools.py` - Class `PythonREPL`
+**File**: N/A in current codebase (Python REPL tool is not implemented)
 
 **Problem**:
 
@@ -355,9 +415,9 @@ def validate_path(path):
 
 **Problem**:
 
-- ✗ No log of executed operations.
-- ✗ No audit trail for forensics.
-- ✗ Impossible to track who did what.
+- ⚠️ A session log exists (`session.log`), but operations are not recorded as a structured audit trail.
+- ✗ No per-action audit trail for forensics.
+- ✗ Impossible to track who did what beyond console/log output.
 
 **Consequences**:
 
@@ -672,15 +732,16 @@ def tool_list_dir(path: str, recursive: bool = False) -> str:
 
 ### 19. **No Version Control Info** 🏷️
 
-**Problem**: No `.git`, no versioning.
+**Problem**: No versioning information in the repository.
+
+**Status**: Resolved in this repository.
 
 **Solution**: Add:
 
 ```
-.gitignore
-.git/config
-VERSION file
-CHANGELOG.md
+`.gitignore`
+`VERSION`
+`CHANGELOG.md`
 ```
 
 ---
